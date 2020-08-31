@@ -1,0 +1,91 @@
+body{
+    padding: 0px;
+    /*background: #f8f8f8 !important;*/
+}
+
+.nav {
+    border-right: 0px !important;
+    padding: 0px 60px 0px 0px !important;
+    background-color: grey !important;
+}
+
+.mb-7{
+    margin-bottom: 7px !important;
+}
+
+.mb-5{
+    margin-top: 5px !important;
+}
+
+.myprofilemodal{
+    height: 400px !important;
+    top: 900px !important;
+    font-size: 20px !important;
+}
+
+.w-big{
+    width: 250px !important;
+}
+
+.bwhite-lg{
+    background-color: transparent !important;
+}
+
+.bwhite-sm{
+    background-color: transparent !important;
+    width: 10px !important;
+}
+.comment-box{
+    display: none;
+}
+.login_card{
+    background-color: #CDB9B9;
+    margin-top: 3em;
+    height: 30em;
+    width: 20em;
+    box-shadow: #f5ee3f;
+    /*border: none;*/
+}
+
+.signup_card{
+    background-color: #CDB9B9;
+    margin-top: 3em;
+    height: 30em;
+    width: 20em;
+    box-shadow: #f5ee3f;
+    border: none;
+}
+
+
+.signup_text{
+    margin-top: 1em;
+}
+.signup_button{
+    color: #fff;
+    background-color: #996A6A;
+}
+.cardsize{
+    width: 5em;
+
+    margin-left: 68%;
+}
+.post_btn{
+    color: #fff;
+    background-color: #996A6A;
+}
+
+.nav-item{
+    margin-right: 7em;
+}
+
+.brand{
+    margin-right: 4em;
+}
+
+.nav-item .brand{
+    font-size: small;
+}
+
+.image1{
+    margin-top: 5em;
+}

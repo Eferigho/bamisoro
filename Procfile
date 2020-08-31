@@ -1,0 +1,1 @@
+web: gunicorn soro_project.wsgi --log-file -
