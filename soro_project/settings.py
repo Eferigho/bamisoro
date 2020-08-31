@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'soro_project.wsgi.application'
 # }
 
 SECRET_KEY = config('tghy3623546%3187544')
-DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = config('DEBUG', default=False,)
 DATABASES = {
     'default': dj_database_url.config(
         default=config('postgres://zsobxqzbaeacqx:c7aee2c92fa68f704d6940be168bb65500ec4f0b18089a44a054fa538741ed9c@ec2-52-202-198-60.compute-1.amazonaws.com:5432/d5ebcv8bgsr3h5')
