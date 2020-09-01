@@ -15,6 +15,7 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 import dj_database_url
 
+
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
 # Quick-start development settings - unsuitable for production
@@ -24,14 +25,13 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = 'd#fn&avvr7i4l0w#%kkow@2u*4cgwz8y1kr13wkxxgiew=a8%3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['https://git.heroku.com/bamisoro.git']
+ALLOWED_HOSTS = []
 
 # Application definition
 
 INSTALLED_APPS = [
-    'accounts.apps.AccountsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,13 +39,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'posts.apps.PostsConfig',
-    'profiles.apps.ProfilesConfig',
+    'posts',
+    'profiles',
+    'accounts',
+
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    # 'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -77,19 +79,19 @@ WSGI_APPLICATION = 'soro_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 # SECRET_KEY = config('tghy3623546%3187544')
 # DEBUG = config('DEBUG', default=False,)
-DATABASES = {
-    'default': dj_database_url.config(
-        'postgres://zsobxqzbaeacqx:c7aee2c92fa68f704d6940be168bb65500ec4f0b18089a44a054fa538741ed9c@ec2-52-202-198-60.compute-1.amazonaws.com:5432/d5ebcv8bgsr3h5')
-}
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         'postgres://zsobxqzbaeacqx:c7aee2c92fa68f704d6940be168bb65500ec4f0b18089a44a054fa538741ed9c@ec2-52-202-198-60.compute-1.amazonaws.com:5432/d5ebcv8bgsr3h5')
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
