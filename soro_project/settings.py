@@ -27,7 +27,7 @@ SECRET_KEY = 'd#fn&avvr7i4l0w#%kkow@2u*4cgwz8y1kr13wkxxgiew=a8%3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://bamisoro.herokuapp.com/']
 
 # Application definition
 
