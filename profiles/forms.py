@@ -6,3 +6,7 @@ class ProfileModelForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ('first_name', 'last_name', 'email', 'bio', 'avatar', 'country',)
+
+
+class SearchForFriends(forms.Form):
+    query = forms.CharField()

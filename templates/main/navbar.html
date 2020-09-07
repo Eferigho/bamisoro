@@ -4,11 +4,11 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     </head>
     <body>
-        <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <nav class="navbar navbar-expand-md  shadow" style="background-color: #CDB9B9;">
               <div class=" container">
                   <div class="navbar-brand ">
                       <a href="{% url 'posts:main-post-view' %}" class="item ">
-                        <h3 class="brand">Soro</h3>
+                        <h3 class="brand" style="color: white">Soro</h3>
                     </a>
                   </div>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,23 +18,21 @@
                         <ul class="navbar-nav mr-auto">
                             {% if request.user.is_authenticated %}
                                   <li class="nav-item active ">
-                                        <a class="nav-link " href="{% url 'posts:main-post-view' %}">Home <span class="sr-only">(current)</span></a>
+                                        <a class="nav-link " style="color: white" href="{% url 'posts:main-post-view' %}">Home <span class="sr-only">(current)</span></a>
                                   </li>
                                 <li class="nav-item">
-                                    <form class="form-inline">
+                                    <form class="form-inline" method="GET" action="profiles:search-for-friends">
+                                        {% csrf_token %}
                                         <div class="input-group">
-                                          <input type="text" class="form-control" placeholder="name of friend..." aria-label="Find_friends" aria-describedby="basic-addon1">
-                                            <div class="input-group-prepend">
-                                            <span class="input-group-text" id="basic-addon1">
-                                                <i class="search icon"></i>
-                                            </span>
-                                          </div>
+                                          <input type="text" class="form-control" placeholder="name of friend..."
+                                                 aria-label="Find_friends" aria-describedby="basic-addon1"
+                                                name="{{form.query.html_name}}" id="{{form.query.id_for_label">
                                         </div>
-                                        <button type="submit" class="btn post_btn btn-success">Search</button>
+                                        <button type="submit" class="btn post_btn" style="background-color: white" >Search</button>
                                     </form>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a class="nav-link dropdown-toggle " style="color: white" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                       Friends
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -44,7 +42,7 @@
                                     </div>
                                 </li>
                                 <li class="nav-item mr-auto dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a class="nav-link dropdown-toggle" style="color: white" href="#" id="navbarDropdownMenuLink1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                       {{ request.user }}
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink1">

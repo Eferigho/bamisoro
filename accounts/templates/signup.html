@@ -8,13 +8,14 @@
     <link rel="stylesheet" type="text/css" href= {% static 'style.css' %}/>
 </head>
 <body style="background: url({% static 'accounts/images/bkg.png' %});
-                background-repeat: no-repeat; background-size: cover;
-                height: auto;">
+                background-repeat: no-repeat; background-size : 100% 100%;
+                height: auto; width:100%;">
     {% block content %}
-    <div class="col-sm-12 col-md-12" >
-    <div class="col-sm-12 col-md-12 cardsize" >
-
-        <div class="card signup_card shadow">
+    <div class="col-sm-12 col-md-12" style="display:flex;">
+        <div class="col-sm-12 col-md-4"></div>
+        <div class="col-sm-12 col-md-4"></div>
+        <div class="col-sm-12 col-md-4" >
+            <div class="card signup_card shadow">
 
                 <div class="container">
                         <h2 class="h2 signup_text">Sign up</h2>
@@ -36,19 +37,19 @@
                             {% endif %}
                         <div class="form-group">
                             <input class="input-group form-control mb-4" type="text"
-                                   placeholder="Enter Username"
+                                   placeholder="username"
                                    name="{{ form.username.html_name }}"
                                    id="{{ form.username.id_for_label }}" aria-required="false">
                         </div>
                         <div class="form-group">
                             <input class="input-group form-control mb-4" type="password"
-                                   placeholder="Enter your password"
+                                   placeholder="password"
                                    name="{{ form.password1.html_name }}"
                                    id="{{ form.password1.id_for_label }}" aria-required="false">
                         </div>
                          <div class="form-group">
                             <input class="input-group form-control mb-4" type="password"
-                                   placeholder="Enter your password"
+                                   placeholder="confirm password"
                                    name="{{ form.password2.html_name }}"
                                    id="{{ form.password2.id_for_label }}" aria-required="false">
                         </div>
@@ -61,9 +62,7 @@
             </div>
             </div>
         </div>
-
-    </div>
-
+        </div>
     </div>
 
 

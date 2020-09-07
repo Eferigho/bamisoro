@@ -42,8 +42,9 @@ body{
     background-color: #CDB9B9;
     margin-top: 3em;
     height: 30em;
-    width: 20em;
+    width: auto;
     box-shadow: #f5ee3f;
+    border: none;
     /*border: none;*/
 }
 
@@ -51,9 +52,10 @@ body{
     background-color: #CDB9B9;
     margin-top: 3em;
     height: 30em;
-    width: 20em;
+    width: auto;
     box-shadow: #f5ee3f;
     border: none;
+
 }
 
 
@@ -66,8 +68,6 @@ body{
 }
 .cardsize{
     width: 5em;
-
-    margin-left: 68%;
 }
 .post_btn{
     color: #fff;
@@ -88,4 +88,9 @@ body{
 
 .image1{
     margin-top: 5em;
+}
+
+.post-title{
+    border-bottom: none;
+
 }

@@ -19,12 +19,15 @@
             <div class="ui grid">
                 <div class="row">
                     <div class="three wide column">
-                        <img class="ui small circular image" src="{{obj.avatar.url}}">
+                        <img class="ui small rounded image" style="margin-left:2em;" src="{{obj.avatar.url}}">
                     </div>
-                    <div class="thirteen wide column">
+                    <div class="thirteen wide column" style="margin-left:2em;">
                         <h3>{{obj.user}}</h3>
                         <p>{{obj.bio}}</p>
-                        <button class="ui positive basic button mb-5  w-big ">See profile</button>
+                        <a href="{{obj.get_absolute_url}}">
+                            <button class="ui positive basic button mb-5  w-big ">See profile</button>
+                        </a>
+
                         <br>
                         {% if obj.user not in rel_receiver and obj.user not in rel_sender %}
                             <form action="{% url 'profiles:send-invite' %}" method="POST">

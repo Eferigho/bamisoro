@@ -8,53 +8,53 @@
     <link rel="stylesheet" type="text/css" href= {% static 'style.css' %}/>
 </head>
 <body style="background: url({% static 'accounts/images/bkg.png' %});
-                background-repeat: no-repeat; background-size: cover;
-                height: auto;">
+                background-repeat: no-repeat; background-size: 100% 100%;
+                height: 100%; width:100%;">
     {% block content %}
-    <div class="col-sm-12 col-md-12" >
-    <div class="col-sm-12 col-md-12 cardsize" >
-        <div class="card login_card shadow">
-        <div class="container">
-                <h2 class="h2 signup_text">Login</h2>
-                <form method="post">
-                     {% csrf_token %}
-                    {% if form.errors %}
-                        {% for field in form %}
-                            {% for error in field.errors %}
-                                <div class="alert alert-danger">
-                                    <strong>{{ error|escape }}</strong>
-                                </div>
+
+        <div class="col-sm-12 col-md-12" style="display:flex">
+            <div class="col-sm-12 col-md-4 " ></div>
+            <div class="col-sm-12 col-md-4 " ></div>
+            <div class="card login_card shadow col-sm-12 col-md-4 " >
+                <div class="container">
+                    <h2 class="h2 signup_text">Login</h2>
+                    <form method="post">
+                        {% csrf_token %}
+                        {% if form.errors %}
+                            {% for field in form %}
+                                {% for error in field.errors %}
+                                    <div class="alert alert-danger">
+                                        <strong>{{ error|escape }}</strong>
+                                    </div>
+                                {% endfor %}
                             {% endfor %}
-                        {% endfor %}
-                        {% for error in form.non_field_errors %}
-                            <div class="alert alert-danger">
-                                <strong>{{ error|escape }}</strong>
-                            </div>
-                        {% endfor %}
-                    {% endif %}
-                    <div class="form-group">
-                        <input class="input-group form-control mb-4" type="text"
-                               placeholder="Enter Username"
-                               name="{{ form.username.html_name }}"
-                               id="{{ form.username.id_for_label }}" aria-required="false">
-                    </div>
-                     <div class="form-group">
-                        <input class="input-group form-control mb-4" type="password"
-                               placeholder="Enter your password"
-                               name="{{ form.password.html_name }}"
-                               id="{{ form.password.id_for_label}}" aria-required="false">
-                    </div>
-                    <div class="form-group">
-                        <small class="label-default " >Don't have an Account <a class="btn-link" href="{% url 'signup' %}">
-                                                <b style="color: red">Signup</b></a> </small>
-                    </div>
-                     <button type="submit" class="btn signup_button btn-lg btn-block">Login</button>
-            </form>
-    </div>
+                            {% for error in form.non_field_errors %}
+                                <div class="alert alert-danger">
+                                             </div>
+                            {% endfor %}
+                        {% endif %}
+                        <div class="form-group">
+                            <input class="input-group form-control mb-4" type="text"
+                                   placeholder="username"
+                                   name="{{ form.username.html_name }}"
+                                   id="{{ form.username.id_for_label }}" aria-required="false">
+                        </div>
+                        <div class="form-group">
+                            <input class="input-group form-control mb-4" type="password"
+                                   placeholder="password"
+                                   name="{{ form.password.html_name }}"
+                                   id="{{ form.password.id_for_label}}" aria-required="false">
+                        </div>
+                        <div class="form-group">
+                            <small class="label-default " >Don't have an Account <a class="btn-link" href="{% url 'signup' %}">
+                                <b style="color: red">Signup</b></a> </small>
+                        </div>
+                             <button type="submit" class="btn signup_button btn-lg btn-block">Login</button>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-    </div>
+
     {% endblock content %}
 <!-- JS, Popper.js, and jQuery -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
