@@ -1,4 +1,6 @@
+from cloudinary.models import CloudinaryField
 from django.contrib.auth.models import User
+from django.core.validators import FileExtensionValidator
 from django.db import models
 from django.urls import reverse
 
@@ -39,8 +41,7 @@ class Profile(models.Model):
     bio = models.TextField(default="No Bio...", max_length=300)
     email = models.EmailField(max_length=200, blank=True)
     country = models.CharField(max_length=200, blank=True)
-    avatar = models.ImageField(default='avatar.png',
-                               blank=True, upload_to='profile')
+    avatar = CloudinaryField('post', validators=[FileExtensionValidator(['png', 'jpg', 'jpeg', 'svg'])], blank=True)
     # install pillow
     # create media_root
     # find avatar.png

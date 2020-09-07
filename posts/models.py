@@ -1,11 +1,13 @@
+from django.core.validators import FileExtensionValidator
 from django.db import models
 from profiles.models import Profile
+from cloudinary.models import CloudinaryField
 
 
 class Post(models.Model):
     title = models.CharField(max_length=50, blank=False, default='Post title')
     content = models.TextField()
-    image = models.ImageField(upload_to='posts', blank=True)
+    image = CloudinaryField('post', validators=[FileExtensionValidator(['png', 'jpg', 'jpeg', 'svg'])], blank=True)
     liked = models.ManyToManyField(Profile, blank=True, related_name='likes')
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
