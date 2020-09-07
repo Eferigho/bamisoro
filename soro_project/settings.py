@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'accounts',
 
     # 3rd party
-    'cloudinary_storage',
+    'cloudinary',
 
 ]
 
